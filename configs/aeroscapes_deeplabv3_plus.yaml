@@ -1,0 +1,22 @@
+DATASET:
+    NAME: "aeroscapes"
+    MEAN: [0.5, 0.5, 0.5]
+    STD: [0.5, 0.5, 0.5]
+    MODE: 'train'
+TRAIN:
+    EPOCHS: 300
+    BATCH_SIZE: 6
+    CROP_SIZE: 480
+    BASE_SIZE: 520
+#    PRETRAINED_MODEL_PATH: "./runs/checkpoints/DeepLabV3_Plus_xception65_pascal_aug_2019-11-28-03-07/best_model.pth"
+
+TEST:
+    BATCH_SIZE: 6
+
+SOLVER:
+    LR: 0.0001
+
+MODEL:
+    MODEL_NAME: "DeepLabV3_Plus"
+    BACKBONE: "xception65"
+    BN_EPS_FOR_ENCODER: 1e-3

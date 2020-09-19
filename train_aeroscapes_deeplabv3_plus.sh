@@ -1,0 +1,1 @@
+nohup python -u tools/train.py --config-file configs/aeroscapes_deeplabv3_plus.yaml &

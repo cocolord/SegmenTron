@@ -96,11 +96,13 @@ class Trainer(object):
             name, ext = os.path.splitext(args.resume)
             assert ext == '.pkl' or '.pth', 'Sorry only .pth and .pkl files supported.'
             logging.info('Resuming training, loading {}...'.format(args.resume))
-            resume_sate = torch.load(args.resume)
-            self.model.load_state_dict(resume_sate['state_dict'])
+            resume_state = torch.load(args.resume)
+            self.model.load_state_dict(resume_state['state_dict'])
+            # self.model.load_state_dict(resume_state)
             self.start_epoch = resume_sate['epoch']
+            # self.start_epoch = 270
             logging.info('resume train from epoch: {}'.format(self.start_epoch))
-            if resume_sate['optimizer'] is not None and resume_sate['lr_scheduler'] is not None:
+            if resume_state['optimizer'] is not None and resume_state['lr_scheduler'] is not None:
                 logging.info('resume optimizer and lr scheduler from resume state..')
                 self.optimizer.load_state_dict(resume_sate['optimizer'])
                 self.lr_scheduler.load_state_dict(resume_sate['lr_scheduler'])

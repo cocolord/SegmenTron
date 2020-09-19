@@ -29,12 +29,12 @@ def parse_args():
 
 def download_coco(path, overwrite=False):
     _DOWNLOAD_URLS = [
-        ('http://images.cocodataset.org/zips/train2017.zip',
-         '10ad623668ab00c62c096f0ed636d6aff41faca5'),
+        # ('http://images.cocodataset.org/zips/train2017.zip',
+        #  '10ad623668ab00c62c096f0ed636d6aff41faca5'),
         ('http://images.cocodataset.org/annotations/annotations_trainval2017.zip',
          '8551ee4bb5860311e79dace7e79cb91e432e78b3'),
-        ('http://images.cocodataset.org/zips/val2017.zip',
-         '4950dc9d00dbe1c933ee0170f5797584351d2a41'),
+        # ('http://images.cocodataset.org/zips/val2017.zip',
+        #  '4950dc9d00dbe1c933ee0170f5797584351d2a41'),
         # ('http://images.cocodataset.org/annotations/stuff_annotations_trainval2017.zip',
         # '46cdcf715b6b4f67e980b529534e79c2edffe084'),
         # test2017.zip, for those who want to attend the competition.
