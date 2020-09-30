@@ -4,19 +4,20 @@ DATASET:
     STD: [0.5, 0.5, 0.5]
     MODE: 'train'
 TRAIN:
-    EPOCHS: 300
-    BATCH_SIZE: 6
+    EPOCHS: 500
+    BATCH_SIZE: 8
     CROP_SIZE: 480
     BASE_SIZE: 520
-#    PRETRAINED_MODEL_PATH: "./runs/checkpoints/DeepLabV3_Plus_xception65_pascal_aug_2019-11-28-03-07/best_model.pth"
+    # PRETRAINED_MODEL_PATH: "runs/checkpoints/DeepLabV3_Plus_xception65_aeroscapes_2020-09-19-16-44/best_model.pth"
 
 TEST:
-    BATCH_SIZE: 6
+    BATCH_SIZE: 4
 
 SOLVER:
-    LR: 0.0001
+    LR: 0.001
+    AUX_WEIGHT: 0.5
 
 MODEL:
     MODEL_NAME: "DeepLabV3_Plus"
-    BACKBONE: "xception65"
-    BN_EPS_FOR_ENCODER: 1e-3
+    BACKBONE: "resnet101"
+    # BN_EPS_FOR_ENCODER: 1e-3

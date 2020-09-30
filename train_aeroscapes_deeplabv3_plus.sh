@@ -1,1 +1,1 @@
-nohup python -u tools/train.py --config-file configs/aeroscapes_deeplabv3_plus.yaml &
+nohup python -u tools/train.py --config-file configs/aeroscapes_deeplabv3_plus.yaml  --resume runs/checkpoints/DeepLabV3_Plus_resnet101_aeroscapes_2020-09-23-10-11/best_model.pth &

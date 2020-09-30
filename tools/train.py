@@ -97,15 +97,15 @@ class Trainer(object):
             assert ext == '.pkl' or '.pth', 'Sorry only .pth and .pkl files supported.'
             logging.info('Resuming training, loading {}...'.format(args.resume))
             resume_state = torch.load(args.resume)
-            self.model.load_state_dict(resume_state['state_dict'])
-            # self.model.load_state_dict(resume_state)
-            self.start_epoch = resume_sate['epoch']
-            # self.start_epoch = 270
+            # self.model.load_state_dict(resume_state['state_dict'])
+            self.model.load_state_dict(resume_state)
+            # self.start_epoch = resume_state['epoch']
+            self.start_epoch = 0
             logging.info('resume train from epoch: {}'.format(self.start_epoch))
-            if resume_state['optimizer'] is not None and resume_state['lr_scheduler'] is not None:
-                logging.info('resume optimizer and lr scheduler from resume state..')
-                self.optimizer.load_state_dict(resume_sate['optimizer'])
-                self.lr_scheduler.load_state_dict(resume_sate['lr_scheduler'])
+            # if resume_state['optimizer'] is not None and resume_state['lr_scheduler'] is not None:
+            #     logging.info('resume optimizer and lr scheduler from resume state..')
+            #     self.optimizer.load_state_dict(resume_sate['optimizer'])
+            #     self.lr_scheduler.load_state_dict(resume_sate['lr_scheduler'])
 
         if args.distributed:
             self.model = nn.parallel.DistributedDataParallel(self.model, device_ids=[args.local_rank],
